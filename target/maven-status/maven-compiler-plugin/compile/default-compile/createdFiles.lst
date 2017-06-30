@@ -1,0 +1,8 @@
+weddinginvitation/AppStarter.class
+weddinginvitation/util/Utility.class
+weddinginvitation/util/WiConfig.class
+weddinginvitation/service/DanmuService.class
+weddinginvitation/dao/DanmuDao.class
+weddinginvitation/domain/Danmu.class
+weddinginvitation/domain/Guest.class
+weddinginvitation/controller/DanmuController.class

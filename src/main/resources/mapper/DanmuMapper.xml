@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="weddinginvitation.dao.DanmuDao">
+	<resultMap id="DanmuResultMap" type="weddinginvitation.domain.Danmu">
+		<result column="id" property="id" />
+		<result column="context" property="context" />
+		<result column="created_date" property="createdDate" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id,context, created_date
+	</sql>
+
+	<select id="getDanmu" resultMap="DanmuResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from wi_danmu
+	</select>
+	
+	<insert id="addDanmu" parameterType="weddinginvitation.domain.Danmu">
+		insert into wi_danmu (context,created_date)values(#{context},now())
+	</insert>
+	
+	<insert id="recordGuest" parameterType="weddinginvitation.domain.Guest">
+		insert into wi_signin (name,p_number,created_date)values(#{name},#{pNum},now())
+	</insert>
+
+</mapper>
